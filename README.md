@@ -9,7 +9,7 @@ It uses Nix much more extensively in the tooling.
 ### Buildables
 
 - `bootloader`: Assembles the [bootloader](./boot)
-- `kernel`: Builds the [kernek](./kernel)
+- `kernel`: Builds the [kernel](./kernel)
 - `os-image`: Creates an OS image by combining the bootloader and kernel
 - `toolchain`: The Rust toolchain used to do the compilation (Nightly, `rust-src` included)
 - `default`: Alias of `os-image`
