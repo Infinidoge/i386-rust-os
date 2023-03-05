@@ -1,0 +1,14 @@
+.DS_Store
+.idea
+*.log
+tmp/
+
+# Nix
+result
+result-man
+.direnv
+
+# Rust
+debug/
+target/
+**/*.rs.bk
