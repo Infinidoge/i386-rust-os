@@ -71,6 +71,8 @@
           buildInputs = with pkgs; [
             nasm
             rustToolchain
+
+            cargo-show-asm
           ];
         };
 
