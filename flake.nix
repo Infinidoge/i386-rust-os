@@ -77,7 +77,7 @@
         packages = rec {
           bootloader = callPackage ./boot { };
           kernel = callPackage ./kernel { };
-          os-image = pkgs.runCommand "os-image.bin" { } "cat ${bootloader} ${lib.getExe kernel} > $out";
+          os-image = pkgs.runCommandLocal "os-image.bin" { } "cat ${bootloader} ${lib.getExe kernel} > $out";
 
           toolchain = rustToolchain;
 
