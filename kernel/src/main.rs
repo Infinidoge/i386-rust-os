@@ -26,7 +26,7 @@ pub extern "C" fn _start() -> ! {
     // Currently disabled during testing, will be factored out
 
     // Print 'Hello World!' to the screen
-    for (i, &byte) in HELLO.iter().enumerate() {
+    for (i, &byte) in HELLO.0.iter().enumerate() {
         paint((0, i), byte, 0x0b);
     }
     // This works properly, it prints just fine
