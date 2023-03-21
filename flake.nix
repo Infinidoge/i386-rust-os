@@ -33,7 +33,7 @@
           crossSystem = {
             config = "i386-elf";
             rustc.platform = {
-              data-layout = "e-m:e-p:32:32";
+              data-layout = "e-m:e-p:32:32-f64:32:64-f80:32-n8:16:32-S128";
               llvm-target = "i386-none-elf";
               target-endian = "little";
               target-pointer-width = "32";
@@ -41,6 +41,13 @@
               os = "none";
               arch = "x86";
               executables = true;
+              disable-redzone = true;
+              dynamic-linking = false;
+              relocation-model = "pic";
+              code-model = "kernel";
+              has-rpath = false;
+              position-independent-executables = false;
+              no-default-libraries = true;
               linker-flavor = "ld.lld";
               linker = "rust-lld";
               panic-strategy = "abort";
