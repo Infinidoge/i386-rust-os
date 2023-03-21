@@ -2,10 +2,9 @@
 #![no_main]
 #![allow(unused_imports)]
 
-use core::arch::asm;
 use i386_os::{
     drivers::screen::{paint, print, COLS, ROWS, VIDEO_ADDRESS},
-    AsciiStr,
+    wait, AsciiStr,
 };
 
 const HELLO: AsciiStr = AsciiStr(b"Hello World!");
@@ -52,14 +51,6 @@ pub extern "C" fn _start() -> ! {
 //         );
 //     }
 // }
-
-fn wait(value: u32) {
-    for _ in 0..value {
-        unsafe {
-            asm!("");
-        }
-    }
-}
 
 use core::panic::PanicInfo;
 
