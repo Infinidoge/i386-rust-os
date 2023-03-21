@@ -11,7 +11,8 @@ lib.my.cargoWithDeps {
   allowSubstitutes = false;
 
   # FIXME: Vendor dependencies for std crates; See https://github.com/ipetkov/crane/issues/260
-  cargoVendorDir = lib.crane.vendorCargoDeps {
-    src = "${rustToolchain.passthru.availableComponents.rust-src}/lib/rustlib/src/rust";
-  };
+  cargoVendorDir = lib.my.vendorCargoDeps' [
+    (rustToolchain.passthru.availableComponents.rust-src + "/lib/rustlib/src/rust/Cargo.lock")
+    ../Cargo.lock
+  ];
 }
